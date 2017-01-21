@@ -24,11 +24,15 @@ h1,h2,h3,h4,p {
 .big {
   font-size: 75px;
 }
+.progress {
+  background-color: $grey;
+  height: 3px;
+}
+
 
 #app {
   .row {
     height: 33vh;
-    border-bottom: 1px solid white
   }
 }
 
