@@ -18,13 +18,13 @@ const upload = multer({ dest: path.join(__dirname, 'uploads') });
 /**
  * Load environment variables from .env file, where API keys and passwords are configured.
  */
-dotenv.load({ path: '.env.dsmagicmirror' });
+dotenv.load({ path: '.env' });
 
 /**
  * Controllers (route handlers).
  */
 const homeController = require('./controllers/home');
-const userController = require('./controllers/user');
+const newsController = require('./controllers/news');
 
 /**
  * Create Express server.
@@ -66,8 +66,13 @@ app.locals.moment = require('moment');
  * Primary app routes.
  */
 app.get('/', homeController.index);
+app.get('/fuel', homeController.getFuelPrice);
 
+// NEWS
+app.get('/news', newsController.index);
 
+// NEWS VFB
+app.get('/news/vfb', newsController.vfbFeed);
 
 
 

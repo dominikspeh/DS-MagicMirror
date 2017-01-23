@@ -14,25 +14,65 @@ html {
 
 body {
   background-color: $background-color;
-  overflow: hidden;
+ // overflow: hidden;
 
 }
 
-h1,h2,h3,h4,p {
+h1,h2,h3,h4,p, li {
   color: $brand-primary
+}
+.mb0 {
+  margin-bottom: 0;
 }
 .big {
   font-size: 75px;
+  margin-top: 0;
 }
 .progress {
   background-color: $grey;
   height: 3px;
 }
 
+.fa {
+  span {
+    font-family: "Lato";
+    margin-left: 7px;
+  }
+}
+
 
 #app {
   .row {
     height: 33vh;
+  }
+
+// NEWSTICKER
+
+  .news {
+    position: absolute;
+    height: auto;
+    bottom: 0px;
+  }
+
+  .carousel-inner {
+    .item {
+
+      .feedlogo {
+        margin: 0 auto;
+        height: 20px;
+      }
+    }
+  }
+
+  article {
+    h4 {
+      font-size: 20px;
+    }
+    p {
+      font-size: 16px;
+      font-weight: 300;
+    }
+
   }
 }
 
@@ -45,6 +85,36 @@ footer {
 
   p, ul {
     margin-bottom: 0;
+  }
+}
+
+
+// FADE SLIDER
+.carousel-fade {
+  .carousel-inner {
+    .item {
+      transition-property: opacity;
+    }
+
+    .item,
+    .active.left,
+    .active.right {
+      opacity: 0;
+    }
+
+    .active,
+    .next.left,
+    .prev.right {
+      opacity: 1;
+    }
+
+    .next,
+    .prev,
+    .active.left,
+    .active.right {
+      left: 0;
+      transform: translate3d(0, 0, 0);
+    }
   }
 }
 
